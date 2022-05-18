@@ -31,6 +31,10 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.password
         val login = binding.login
         val loading = binding.loading
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Login"
+        actionBar.setDisplayHomeAsUpEnabled(true)
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)

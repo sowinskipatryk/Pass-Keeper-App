@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".PassSaveActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -19,29 +19,62 @@
         app:srcCompat="@drawable/keyper" />
 
     <TextView
-        android:id="@+id/enterMasterKeyInfoTextView"
+        android:id="@+id/enterServiceInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Enter the Master Key"
+        android:text="Fill in the input fields"
         android:textColor="@color/purple_500"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textServiceInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textServiceInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
+        android:gravity="center_vertical"
+        android:hint="Service Name"
+        android:paddingBottom="24dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterServiceInfoTextView">
+
+
+        <EditText
+            android:id="@+id/serviceNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#606300ee"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableTint="#ffffff"
+            android:ems="5"
+            android:gravity="center"
+            android:paddingBottom="24dp"
+            android:textColor="@color/purple_500"
+            android:textColorHint="#ffffff" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/savePasswordButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="LOGIN"
+        android:text="SAVE PASSWORD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textPassInputLayout" />
 
     <TextView
-        android:id="@+id/loginInfoTextView"
+        android:id="@+id/savingInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -50,28 +83,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/savePasswordButton" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textPassInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:gravity="center_vertical"
-        android:hint="Master Key"
+        android:hint="Password"
         android:paddingBottom="24dp"
+        android:textColor="#ffffff"
         android:textColorHint="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterMasterKeyInfoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/textServiceInputLayout"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#ffffff">
 
         <EditText
-            android:id="@+id/masterKeyTextView"
+            android:id="@+id/servicePasswordTextView"
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:background="#606300ee"
@@ -84,6 +117,5 @@
             android:textColor="@color/purple_500"
             android:textColorHint="#ffffff" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

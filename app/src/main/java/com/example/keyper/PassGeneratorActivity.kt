@@ -1,11 +1,11 @@
 package com.example.keyper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import java.lang.StringBuilder
 import java.security.SecureRandom
 import java.util.*
@@ -15,8 +15,13 @@ class PassGeneratorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pass_generator)
 
+        val actionBar = supportActionBar
+        actionBar!!.title = "Pass Generator"
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
         val generatePassButton = findViewById<Button>(R.id.generatePassButton)
         val generatedPassTextView = findViewById<TextView>(R.id.generatedPassTextView)
+        val saveButton = findViewById<Button>(R.id.saveButton)
 
         generatePassButton.setOnClickListener{
 
@@ -60,5 +65,22 @@ class PassGeneratorActivity : AppCompatActivity() {
 
             }
 
+        saveButton.setOnClickListener {
+            val intent = Intent(this, PassSaveActivity::class.java)
+            startActivity(intent)
         }
+
+        }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
+
     }
+
+}

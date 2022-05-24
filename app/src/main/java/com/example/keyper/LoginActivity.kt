@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,28 +16,41 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val actionBar = supportActionBar
+        actionBar!!.title = "Sign in"
+        actionBar.setDisplayHomeAsUpEnabled(false)
 
-        actionBar!!.title = "Login"
-        actionBar.setDisplayHomeAsUpEnabled(true)
+        val validateButton = findViewById<Button>(R.id.loginButton)
+        val validationInfoTextView = findViewById<TextView>(R.id.loginInfoTextView)
+        val db = DBHelper(this)
 
-        val validateButton = findViewById<Button>(R.id.validateButton)
-        val passwordInput = findViewById<EditText>(R.id.passwordInput)
-        val validationInfoTextView = findViewById<TextView>(R.id.validationInfoTextView)
 
         validateButton.setOnClickListener {
-            if (TextUtils.isEmpty(passwordInput.getText().toString())) {
-                validationInfoTextView.text = "Enter password!"
-            }
-            else if (passwordInput.getText().toString() == "1234") {
+            val passwordInput = findViewById<EditText>(R.id.masterKeyTextView)
+            val passwordText = passwordInput.getText().toString()
+            val successfulLogin = db.equalsMasterKey(passwordText)
+
+            if (TextUtils.isEmpty(passwordText)) {
+                validationInfoTextView.text = " Enter password!"
+                validationInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
+                    R.drawable.ic_baseline_warning_24,
+                    0,
+                    0,
+                    0
+                )
+            } else if (successfulLogin) {
                 val intent = Intent(this, ChoiceActivity::class.java)
                 startActivity(intent)
-            }
-            else {
-                validationInfoTextView.text = "Wrong password!"
+            } else {
+                validationInfoTextView.text = " Wrong password!"
+                validationInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
+                    R.drawable.ic_baseline_warning_24,
+                    0,
+                    0,
+                    0
+                )
             }
 
         }
-
 
     }
 }

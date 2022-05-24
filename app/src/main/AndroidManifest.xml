@@ -10,16 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keyper">
         <activity
+            android:name=".PassSaveActivity"
+            android:parentActivityName=".ChoiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".PassCheckActivity"
+            android:parentActivityName=".ChoiceActivity"
             android:exported="false" />
         <activity
             android:name=".ChoiceActivity"
             android:exported="false" />
         <activity
             android:name=".PassGeneratorActivity"
+            android:parentActivityName=".ChoiceActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

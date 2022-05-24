@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -25,10 +26,26 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getData() {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Services", null);
         return cursor;
         }
+
+    public Boolean equalsMasterKey(String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT password FROM Master WHERE name = ?", new String[] {"key"});
+
+        if (cursor.moveToFirst()) {
+            String str = cursor.getString(cursor.getColumnIndexOrThrow("password"));
+            if (password.equals(str)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 
     public Boolean insertServicePassword(String name, String password) {
             SQLiteDatabase db = this.getWritableDatabase();

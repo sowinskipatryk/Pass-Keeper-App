@@ -3,18 +3,20 @@ package com.example.keyper
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.os.Handler
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val goToLoginScreenButton = findViewById<Button>(R.id.goToLoginScreenButton)
+        supportActionBar?.hide()
 
-        goToLoginScreenButton.setOnClickListener{
+        val handler = Handler()
+        handler.postDelayed({
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-        }
+            finish()
+        }, 3000)
     }
 }

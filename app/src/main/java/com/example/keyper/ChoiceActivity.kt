@@ -17,6 +17,7 @@ class ChoiceActivity : AppCompatActivity() {
         val goToPassGeneratorScreenButton = findViewById<Button>(R.id.goToPassGeneratorScreenButton)
         val goToPassCheckScreenButton = findViewById<Button>(R.id.goToPassCheckScreenButton)
         val addServicePasswordButton = findViewById<Button>(R.id.addServicePasswordButton)
+        val updateServicePasswordButton = findViewById<Button>(R.id.updateServicePasswordButton)
 
         goToPassGeneratorScreenButton.setOnClickListener {
             val intent = Intent(this, PassGeneratorActivity::class.java)
@@ -31,5 +32,15 @@ class ChoiceActivity : AppCompatActivity() {
             val intent = Intent(this, PassSaveActivity::class.java)
             startActivity(intent)
         }
+
+        updateServicePasswordButton.setOnClickListener {
+            val intent = Intent(this, PassUpdateActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
+
 }

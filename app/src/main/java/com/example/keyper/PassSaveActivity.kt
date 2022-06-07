@@ -2,13 +2,9 @@ package com.example.keyper
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import com.example.keyper.DBHelper
 
 class PassSaveActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,25 +19,25 @@ class PassSaveActivity : AppCompatActivity() {
         val servicePasswordTextView = findViewById<TextView>(R.id.servicePasswordTextView)
         val savePasswordButton = findViewById<Button>(R.id.savePasswordButton)
         val savingInfoTextView = findViewById<TextView>(R.id.savingInfoTextView)
-        val db = DBHelper(this)
+        val db = DBHandler(this)
         val bundle : Bundle? = intent.extras
         if (bundle != null) {
             servicePasswordTextView.text = bundle.getString("passw")
         }
-//        val generatedPasswordString = intent.getStringExtra("passwordString").toString()
-//        servicePasswordTextView.text = generatedPasswordString
 
-//        serviceNameTextView.setOnKeyListener(View.OnKeyListener{v, keyCode, event ->
-//            if ((keyCode == KeyEvent.KEYCODE_ENTER) && (event.action == KeyEvent.ACTION_DOWN)) {
-//            serviceNameTextView.clearFocus()
+//        serviceNameTextView.setOnKeyListener(View.OnKeyListener{ v, keyCode, event ->
+//            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+//                serviceNameTextView.clearFocus()
+//                servicePasswordTextView.requestFocus()
+//                return@OnKeyListener true
 //            }
-//        })
-
+//            false
+//            })
 
         savePasswordButton.setOnClickListener {
-            var serviceNameText = serviceNameTextView.getText().toString()
+            var serviceNameText = serviceNameTextView.text.toString()
             serviceNameText = serviceNameText.lowercase()
-            var servicePasswordText = servicePasswordTextView.getText().toString()
+            var servicePasswordText = servicePasswordTextView.text.toString()
             if ((serviceNameText.isEmpty()) || (servicePasswordText.isEmpty())) {
                 savingInfoTextView.text = " Fill in all input fields!"
                 savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(

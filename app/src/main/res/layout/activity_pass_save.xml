@@ -22,9 +22,10 @@
         android:id="@+id/enterServiceInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/baloo"
         android:text="Fill in the input fields"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/ic_launcher_background"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textServiceInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -34,18 +35,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
-        android:gravity="center_vertical"
         android:hint="Service Name"
-        android:paddingBottom="24dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
+        android:paddingBottom="0dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterServiceInfoTextView">
-
 
         <EditText
             android:id="@+id/serviceNameTextView"
@@ -53,13 +52,16 @@
             android:layout_height="72dp"
             android:background="#606300ee"
             android:drawableStart="@drawable/ic_baseline_person_24"
-            android:drawableTint="#ffffff"
+            android:drawablePadding="-24sp"
+            android:drawableTint="@color/white"
+            android:inputType="text"
             android:ems="5"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
-            android:nestedScrollingEnabled="false"
+            android:maxLines="1"
             android:paddingBottom="24dp"
-            android:textColor="@color/purple_500"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,6 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/baloo"
         android:text="SAVE PASSWORD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -80,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:height="@dimen/icon_size"
+        android:fontFamily="@font/baloo"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -91,10 +95,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:gravity="center_vertical"
         android:hint="Password"
-        android:paddingBottom="24dp"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,12 +115,15 @@
             android:background="#606300ee"
             android:drawableStart="@drawable/ic_baseline_vpn_key_24"
             android:drawableTint="#ffffff"
+            android:maxLines="1"
             android:ems="5"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:inputType="textPassword"
             android:paddingBottom="24dp"
             android:textColor="@color/purple_500"
             android:textColorHint="#ffffff" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

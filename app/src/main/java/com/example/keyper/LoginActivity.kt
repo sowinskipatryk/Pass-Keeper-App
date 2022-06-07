@@ -4,11 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,12 +19,12 @@ class LoginActivity : AppCompatActivity() {
 
         val validateButton = findViewById<Button>(R.id.loginButton)
         val validationInfoTextView = findViewById<TextView>(R.id.loginInfoTextView)
-        val db = DBHelper(this)
+        val db = DBHandler(this)
 
 
         validateButton.setOnClickListener {
             val passwordInput = findViewById<EditText>(R.id.masterKeyTextView)
-            val passwordText = passwordInput.getText().toString()
+            val passwordText = passwordInput.text.toString()
             val successfulLogin = db.equalsMasterKey(passwordText)
 
             if (TextUtils.isEmpty(passwordText)) {

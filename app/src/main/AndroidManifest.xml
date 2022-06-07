@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Keyper">
         <activity
             android:name=".PassUpdateActivity"
+            android:parentActivityName=".ChoiceActivity"
             android:exported="false" />
         <activity
             android:name=".PassSaveActivity"
@@ -39,6 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

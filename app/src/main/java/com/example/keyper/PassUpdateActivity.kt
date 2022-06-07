@@ -2,12 +2,9 @@ package com.example.keyper
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import com.example.keyper.DBHelper
 
 class PassUpdateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +19,12 @@ class PassUpdateActivity : AppCompatActivity() {
         val updateServicePasswordTextView = findViewById<TextView>(R.id.updateServicePasswordTextView)
         val updatePasswordButton = findViewById<Button>(R.id.updatePasswordButton)
         val updatingInfoTextView = findViewById<TextView>(R.id.updatingInfoTextView)
-        val db = DBHelper(this)
+        val db = DBHandler(this)
 
         updatePasswordButton.setOnClickListener {
-            var serviceNameText = updateServiceNameTextView.getText().toString()
+            var serviceNameText = updateServiceNameTextView.text.toString()
             serviceNameText = serviceNameText.lowercase()
-            var servicePasswordText = updateServicePasswordTextView.getText().toString()
+            var servicePasswordText = updateServicePasswordTextView.text.toString()
             if ((serviceNameText.isEmpty()) || (servicePasswordText.isEmpty())) {
                 updatingInfoTextView.text = " Fill in all input fields!"
                 updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(

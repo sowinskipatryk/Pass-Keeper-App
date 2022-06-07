@@ -5,12 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import java.util.ArrayList;
 
-public class DBHelper extends SQLiteOpenHelper {
-    public DBHelper(Context context) {
+public class DBHandler extends SQLiteOpenHelper {
+    public DBHandler(Context context) {
         super(context, "servicedata.db", null, 1);
     }
 
@@ -25,11 +24,20 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Services");
     }
 
-    public Cursor getData() {
+    public ArrayList<Service> getPasswords() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Services", null);
-        return cursor;
+        ArrayList<Service> services = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                services.add(new Service(cursor.getString(1),
+                        cursor.getString(2)));
+            } while (cursor.moveToNext());
         }
+        cursor.close();
+        return services;
+    }
 
     public Boolean equalsMasterKey(String password) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -37,11 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             String str = cursor.getString(cursor.getColumnIndexOrThrow("password"));
-            if (password.equals(str)) {
-                return true;
-            } else {
-                return false;
-            }
+            return password.equals(str);
         } else {
             return false;
         }
@@ -53,11 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
             contentValues.put("name", name);
             contentValues.put("password", password);
             long result = db.insert("Services", null, contentValues);
-            if (result==-1) {
-                return false;
-            } else {
-                return true;
-            }
+        return result != -1;
     }
 
     public Boolean updateServicePassword(String name, String password) {
@@ -68,11 +68,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM Services WHERE name = ?", new String[] {name});
         if (cursor.getCount()>0) {
             long result = db.update("Services", contentValues, "name=?", new String[] {name});
-            if (result==-1) {
-                return false;
-            } else {
-                return true;
-            }
+            return result != -1;
         } else {
             return false;
         }
@@ -83,11 +79,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM Services WHERE name = ?", new String[] {name});
         if (cursor.getCount()>0) {
             long result = db.delete("Services", "name=?", new String[] {name});
-            if (result==-1) {
-                return false;
-            } else {
-                return true;
-            }
+            return result != -1;
         } else {
             return false;
         }

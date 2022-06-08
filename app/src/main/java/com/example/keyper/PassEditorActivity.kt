@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
-class PassUpdateActivity : AppCompatActivity() {
+class PassEditorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pass_update)
+        setContentView(R.layout.activity_editor)
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Editor"

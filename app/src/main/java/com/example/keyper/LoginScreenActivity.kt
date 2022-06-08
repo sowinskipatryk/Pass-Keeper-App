@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
-class LoginActivity : AppCompatActivity() {
+class LoginScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
                     0
                 )
             } else if (successfulLogin) {
-                val intent = Intent(this, ChoiceActivity::class.java)
+                val intent = Intent(this, MainMenuActivity::class.java)
                 startActivity(intent)
             } else {
                 validationInfoTextView.text = " Wrong password!"

@@ -5,16 +5,14 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.security.SecureRandom
-import java.util.*
 
 
 class PassGeneratorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pass_generator)
+        setContentView(R.layout.activity_generator)
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Generator"
@@ -67,7 +65,7 @@ class PassGeneratorActivity : AppCompatActivity() {
             }
 
         saveButton.setOnClickListener {
-            val intent = Intent(this, PassSaveActivity::class.java)
+            val intent = Intent(this, PassCreatorActivity::class.java)
             intent.putExtra("passw", generatedPassTextView.text.toString())
             startActivity(intent)
         }

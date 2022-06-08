@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
-class PassSaveActivity : AppCompatActivity() {
+class PassCreatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pass_save)
+        setContentView(R.layout.activity_creator)
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Creator"

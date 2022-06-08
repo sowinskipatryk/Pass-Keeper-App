@@ -10,29 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keyper">
         <activity
-            android:name=".PassUpdateActivity"
-            android:parentActivityName=".ChoiceActivity"
+            android:name=".PassEditorActivity"
+            android:parentActivityName=".MainMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".PassSaveActivity"
+            android:name=".PassCreatorActivity"
             android:exported="false"
-            android:parentActivityName=".ChoiceActivity" />
+            android:parentActivityName=".MainMenuActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".PassCheckActivity"
+            android:name=".PassViewerActivity"
             android:exported="false"
-            android:parentActivityName=".ChoiceActivity" />
+            android:parentActivityName=".MainMenuActivity" />
         <activity
-            android:name=".ChoiceActivity"
+            android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".PassGeneratorActivity"
             android:exported="false"
-            android:parentActivityName=".ChoiceActivity" />
+            android:parentActivityName=".MainMenuActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class ChoiceActivity : AppCompatActivity() {
+class MainMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_choice)
+        setContentView(R.layout.activity_menu)
 
         val actionBar = supportActionBar
         actionBar!!.title = "Main Menu"
@@ -24,17 +24,17 @@ class ChoiceActivity : AppCompatActivity() {
             startActivity(intent)
         }
         goToPassCheckScreenButton.setOnClickListener {
-            val intent = Intent(this, PassCheckActivity::class.java)
+            val intent = Intent(this, PassViewerActivity::class.java)
             startActivity(intent)
         }
 
         addServicePasswordButton.setOnClickListener {
-            val intent = Intent(this, PassSaveActivity::class.java)
+            val intent = Intent(this, PassCreatorActivity::class.java)
             startActivity(intent)
         }
 
         updateServicePasswordButton.setOnClickListener {
-            val intent = Intent(this, PassUpdateActivity::class.java)
+            val intent = Intent(this, PassEditorActivity::class.java)
             startActivity(intent)
         }
     }

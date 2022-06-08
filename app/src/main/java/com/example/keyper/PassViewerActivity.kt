@@ -3,15 +3,14 @@ package com.example.keyper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class PassCheckActivity : AppCompatActivity() {
+class PassViewerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pass_check)
+        setContentView(R.layout.activity_viewer)
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Viewer"

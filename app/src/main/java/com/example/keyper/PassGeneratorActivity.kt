@@ -1,15 +1,15 @@
 package com.example.keyper
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import java.lang.StringBuilder
+import androidx.appcompat.app.AppCompatActivity
 import java.security.SecureRandom
 import java.util.*
+
 
 class PassGeneratorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +83,12 @@ class PassGeneratorActivity : AppCompatActivity() {
         }
         return super.onContextItemSelected(item)
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        finish()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        return true;
     }
 
 }

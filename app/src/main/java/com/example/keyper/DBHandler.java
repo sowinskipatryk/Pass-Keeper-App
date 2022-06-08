@@ -15,7 +15,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-       db.execSQL("CREATE TABLE Services(name TEXT primary key, password TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Master(name TEXT primary key, password TEXT)");
+       db.execSQL("CREATE TABLE IF NOT EXISTS Services(name TEXT primary key, password TEXT)");
 
     }
 
@@ -41,14 +42,24 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public Boolean equalsMasterKey(String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT password FROM Master WHERE name = ?", new String[] {"key"});
+        Cursor cursor = db.rawQuery("SELECT password FROM Master WHERE name = ?", new String[] {"Key"});
 
         if (cursor.moveToFirst()) {
             String str = cursor.getString(cursor.getColumnIndexOrThrow("password"));
+            cursor.close();
             return password.equals(str);
         } else {
             return false;
         }
+    }
+
+    public Boolean setMasterKey() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", "Key");
+        contentValues.put("password", "1234");
+        long result = db.insert("Master", null, contentValues);
+        return result != -1;
     }
 
     public Boolean insertServicePassword(String name, String password) {
@@ -67,6 +78,7 @@ public class DBHandler extends SQLiteOpenHelper {
         contentValues.put("password", password);
         Cursor cursor = db.rawQuery("SELECT * FROM Services WHERE name = ?", new String[] {name});
         if (cursor.getCount()>0) {
+            cursor.close();
             long result = db.update("Services", contentValues, "name=?", new String[] {name});
             return result != -1;
         } else {
@@ -78,6 +90,7 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Services WHERE name = ?", new String[] {name});
         if (cursor.getCount()>0) {
+            cursor.close();
             long result = db.delete("Services", "name=?", new String[] {name});
             return result != -1;
         } else {

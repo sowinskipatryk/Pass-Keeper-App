@@ -19,21 +19,15 @@ class PassCheckActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Viewer"
 
-    }
-
-    private fun showPasswords() {
         val passwordsList : ArrayList<Service> = dbHandler.getPasswords()
-        val adapter = PasswordAdapter(passwordsList)
         val rv : RecyclerView = findViewById(R.id.passwordList)
-        rv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        rv.adapter = adapter
-    }
+        val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        val pwAdapter = PasswordAdapter(this, passwordsList, rv)
+        rv.hasFixedSize()
+        rv.layoutManager = layoutManager
+        rv.adapter = pwAdapter
 
-    override fun onResume() {
-        showPasswords()
-        super.onResume()
     }
-
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

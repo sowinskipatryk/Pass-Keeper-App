@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -21,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
         val validationInfoTextView = findViewById<TextView>(R.id.loginInfoTextView)
         val db = DBHandler(this)
 
+        db.setMasterKey()
 
         validateButton.setOnClickListener {
             val passwordInput = findViewById<EditText>(R.id.masterKeyTextView)

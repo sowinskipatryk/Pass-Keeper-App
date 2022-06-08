@@ -16,8 +16,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS Master(name TEXT primary key, password TEXT)");
-       db.execSQL("CREATE TABLE IF NOT EXISTS Services(name TEXT primary key, password TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Master(name TEXT UNIQUE primary key, password TEXT)");
+       db.execSQL("CREATE TABLE IF NOT EXISTS Services(name TEXT UNIQUE primary key, password TEXT)");
 
     }
 
@@ -66,7 +66,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public Boolean insertServicePassword(String name, String password) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            contentValues.put("name", name);
+            contentValues.put("name", name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
             contentValues.put("password", password);
             long result = db.insert("Services", null, contentValues);
         return result != -1;

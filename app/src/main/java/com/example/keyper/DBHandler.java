@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,15 +26,15 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Services");
     }
 
-    public ArrayList<Service> getPasswords() {
+    public ArrayList<Service> returnPasswords() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Services", null);
         ArrayList<Service> services = new ArrayList<>();
 
         if (cursor.moveToFirst()) {
             do {
-                services.add(new Service(cursor.getString(1),
-                        cursor.getString(2)));
+                services.add(new Service(cursor.getString(0),
+                        cursor.getString(1)));
             } while (cursor.moveToNext());
         }
         cursor.close();

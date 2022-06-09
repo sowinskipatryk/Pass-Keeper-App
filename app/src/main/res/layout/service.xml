@@ -76,6 +76,7 @@
             app:boxBackgroundMode="filled"
             app:layout_constraintEnd_toStartOf="@+id/servicePasswordCopyDrawable"
             app:layout_constraintTop_toTopOf="@+id/servicePasswordCopyDrawable"
+            app:passwordToggleTint="#555555"
             app:passwordToggleEnabled="true">
 
             <TextView

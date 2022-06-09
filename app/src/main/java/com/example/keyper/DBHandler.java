@@ -68,6 +68,15 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
+    public Boolean updateMasterKey(String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", "Key");
+        contentValues.put("password", password);
+        long result = db.update("Services", contentValues, "name=?", new String[] {"Key"});
+        return result != -1;
+        }
+
     public Boolean insertServicePassword(String name, String password) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();

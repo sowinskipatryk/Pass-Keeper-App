@@ -14,6 +14,10 @@
             android:parentActivityName=".MainMenuActivity"
             android:exported="false" />
         <activity
+            android:name=".MasterKeyEditorActivity"
+            android:parentActivityName=".MainMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".PassCreatorActivity"
             android:exported="false"
             android:parentActivityName=".MainMenuActivity" />

@@ -9,28 +9,17 @@
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.2045" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.2045" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_choice.xml" value="0.25" />
-        <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_editor.xml" value="0.33" />
+        <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_generator.xml" value="0.3220108695652174" />
+        <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_pass_check.xml" value="0.358695652173913" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_pass_generator.xml" value="0.25" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_pass_save.xml" value="0.33" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/activity_pass_update.xml" value="0.33" />
-        <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/service.xml" value="0.2953125" />
+        <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/layout/service.xml" value="0.5" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2675" />
         <entry key="..\:/Users/puchaty/AndroidStudioProjects/KeyperApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.197" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_bookmark_added_24.xml" value="0.1" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_content_copy_24.xml" value="0.1" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.114" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.1" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_choice.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_pass_check.xml" value="0.17978113600833767" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_pass_generator.xml" value="0.1408514492753623" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_pass_save.xml" value="0.1" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_pass_update.xml" value="0.22" />
-        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/service.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>

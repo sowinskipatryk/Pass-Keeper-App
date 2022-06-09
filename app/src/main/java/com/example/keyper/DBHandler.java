@@ -56,11 +56,16 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public Boolean setMasterKey() {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", "Key");
-        contentValues.put("password", "1234");
-        long result = db.insert("Master", null, contentValues);
-        return result != -1;
+        Cursor cursor = db.rawQuery("SELECT password FROM Master WHERE name = ?", new String[] {"Key"});
+        if (cursor.moveToFirst()) {
+            return false;
+        } else {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("name", "Key");
+            contentValues.put("password", "1234");
+            long result = db.insert("Master", null, contentValues);
+            return result != -1;
+        }
     }
 
     public Boolean insertServicePassword(String name, String password) {

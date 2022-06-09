@@ -1,9 +1,12 @@
 package com.example.keyper;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,11 +24,13 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
 
         TextView serviceName;
         TextView servicePassword;
+        Button copyBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             serviceName = itemView.findViewById(R.id.serviceName);
             servicePassword = itemView.findViewById(R.id.servicePassword);
+            copyBtn = itemView.findViewById(R.id.servicePasswordCopyDrawable);
         }
     }
 
@@ -48,6 +53,16 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
         Service service = passwordsList.get(position);
         holder.serviceName.setText(""+ service.getName());
         holder.servicePassword.setText(""+ service.getPassword());
+
+        holder.copyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String passwordValue = service.getPassword();
+                ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData data = ClipData.newPlainText("copy text", passwordValue);
+                clipboardManager.setPrimaryClip(data);
+            }
+        });
 
     }
 

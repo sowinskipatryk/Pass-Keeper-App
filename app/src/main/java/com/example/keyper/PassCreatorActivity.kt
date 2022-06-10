@@ -36,7 +36,7 @@ class PassCreatorActivity : AppCompatActivity() {
 
         savePasswordButton.setOnClickListener {
             var serviceNameText = serviceNameTextView.text.toString()
-            serviceNameText = serviceNameText.lowercase()
+            serviceNameText = serviceNameText.lowercase().capitalize()
             var servicePasswordText = servicePasswordTextView.text.toString()
             if ((serviceNameText.isEmpty()) || (servicePasswordText.isEmpty())) {
                 savingInfoTextView.text = " Fill in all input fields!"

@@ -80,7 +80,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public Boolean insertServicePassword(String name, String password) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            contentValues.put("name", name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
+            contentValues.put("name", name);
             contentValues.put("password", password);
             long result = db.insert("Services", null, contentValues);
         return result != -1;

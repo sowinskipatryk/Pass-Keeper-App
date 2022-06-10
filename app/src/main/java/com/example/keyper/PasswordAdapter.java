@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,6 +62,7 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
                 ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData data = ClipData.newPlainText("copy text", passwordValue);
                 clipboardManager.setPrimaryClip(data);
+                Toast.makeText(context, "Password copied to Clipboard!", Toast.LENGTH_LONG).show();
             }
         });
 

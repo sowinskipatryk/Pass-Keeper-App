@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class PassEditorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class PassEditorActivity : AppCompatActivity() {
 
         updatePasswordButton.setOnClickListener {
             var serviceNameText = updateServiceNameTextView.text.toString()
-            serviceNameText = serviceNameText.lowercase()
+            serviceNameText = serviceNameText.lowercase().capitalize()
             var servicePasswordText = updateServicePasswordTextView.text.toString()
             if ((serviceNameText.isEmpty()) || (servicePasswordText.isEmpty())) {
                 updatingInfoTextView.text = " Fill in all input fields!"

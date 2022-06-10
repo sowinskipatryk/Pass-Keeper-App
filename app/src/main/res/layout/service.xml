@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/service_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,46 +8,58 @@
     android:orientation="vertical"
     app:cardUseCompatPadding="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/relativeLayout"
+    <LinearLayout
+        android:id="@+id/mainLinearLayout"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/serviceNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
-            android:padding="5dp"
-            android:text="Service name:"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/serviceName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:ems="6"
-            android:fontFamily="@font/baloo"
-            android:padding="5dp"
-            android:paddingStart="15dp"
-            android:text="example"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/serviceNameText"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:padding="12dp">
 
         <LinearLayout
+            android:id="@+id/serviceLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/passwordLinearLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/serviceNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:padding="5dp"
+                android:text="Service name:"
+                android:textColor="@color/ic_launcher_background"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/serviceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ems="6"
+                android:fontFamily="@font/baloo"
+                android:padding="5dp"
+                android:paddingStart="15dp"
+                android:text="example"
+                android:textColor="@color/ic_launcher_background"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/serviceNameText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/passwordLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/serviceNameText">
+            app:layout_constraintTop_toBottomOf="@+id/serviceLinearLayout">
 
             <TextView
                 android:id="@+id/servicePasswordText"
@@ -62,6 +73,7 @@
                 android:textSize="16sp" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/servicePasswordTextInputLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -70,9 +82,9 @@
                 android:paddingRight="5dp"
                 app:boxBackgroundMode="none"
                 app:hintEnabled="false"
-                app:layout_constraintEnd_toStartOf="@+id/servicePasswordCopyDrawable"
+                app:layout_constraintEnd_toStartOf="@+id/servicePasswordCopyButton"
                 app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
-                app:layout_constraintTop_toTopOf="@+id/servicePasswordCopyDrawable"
+                app:layout_constraintTop_toTopOf="@+id/servicePasswordCopyButton"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#555555">
 
@@ -94,20 +106,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageButton
-                android:id="@+id/servicePasswordCopyDrawable"
+                android:id="@+id/servicePasswordCopyButton"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:layout_margin="11dp"
                 android:layout_weight="0.1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
                 android:src="@drawable/ic_baseline_content_copy_24"
-                app:tint="#555555"
-                android:background="?attr/selectableItemBackgroundBorderless"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/serviceName" />
+                app:layout_constraintTop_toBottomOf="@+id/serviceName"
+                app:tint="#555555" />
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

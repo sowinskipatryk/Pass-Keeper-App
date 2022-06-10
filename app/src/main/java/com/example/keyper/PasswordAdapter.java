@@ -30,7 +30,7 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
             super(itemView);
             serviceName = itemView.findViewById(R.id.serviceName);
             servicePassword = itemView.findViewById(R.id.servicePassword);
-            copyBtn = itemView.findViewById(R.id.servicePasswordCopyDrawable);
+            copyBtn = itemView.findViewById(R.id.servicePasswordCopyButton);
         }
     }
 

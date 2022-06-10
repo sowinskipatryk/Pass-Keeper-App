@@ -2,9 +2,11 @@ package com.example.keyper
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.security.SecureRandom
 
@@ -20,9 +22,10 @@ class PassGeneratorActivity : AppCompatActivity() {
 
         val generatePassButton = findViewById<Button>(R.id.generatePassButton)
         val generatedPassTextView = findViewById<TextView>(R.id.generatedPassTextView)
+        val generatePassInfoTextView = findViewById<TextView>(R.id.generatePassInfoTextView)
         val saveButton = findViewById<Button>(R.id.saveButton)
 
-        generatePassButton.setOnClickListener{
+        generatePassButton.setOnClickListener {
 
             val specialChars = "!@#$%^&*()"
             val lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
@@ -31,7 +34,7 @@ class PassGeneratorActivity : AppCompatActivity() {
             val digitsNum = SecureRandom().nextInt(3) + 1
             val specialCharsNum = SecureRandom().nextInt(3) + 1
             val upperCaseLettersNum = SecureRandom().nextInt(3) + 1
-            val lowerCaseLettersNum = 10-digitsNum-specialCharsNum-upperCaseLettersNum
+            val lowerCaseLettersNum = 10 - digitsNum - specialCharsNum - upperCaseLettersNum
             val password = StringBuilder(10)
 
             for (x in 0 until upperCaseLettersNum) {
@@ -53,24 +56,40 @@ class PassGeneratorActivity : AppCompatActivity() {
                 password.append(lowerCaseLetters[pickedLetterIndex])
             }
 
-            val shuffledPasswordList= password.toMutableList().shuffled()
+            val shuffledPasswordList = password.toMutableList().shuffled()
             var shuffledPasswordString = ""
 
-            for (char in shuffledPasswordList){
+            for (char in shuffledPasswordList) {
                 shuffledPasswordString += char
             }
 
             generatedPassTextView.text = shuffledPasswordString
 
-            }
+        }
 
         saveButton.setOnClickListener {
-            val intent = Intent(this, PassCreatorActivity::class.java)
-            intent.putExtra("passw", generatedPassTextView.text.toString())
-            startActivity(intent)
+            if (generatedPassTextView.text.toString().equals("Tap button")) {
+                generatePassInfoTextView.text = " Generate password first!"
+                generatePassInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
+                    R.drawable.ic_baseline_warning_24,
+                    0,
+                    0,
+                    0
+                )
+            } else {
+                generatePassInfoTextView.text = ""
+                generatePassInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
+                    com.google.android.material.R.drawable.navigation_empty_icon,
+                    0,
+                    0,
+                    0
+                )
+                val intent = Intent(this, PassCreatorActivity::class.java)
+                intent.putExtra("passw", generatedPassTextView.text.toString())
+                startActivity(intent)
+            }
         }
-
-        }
+    }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

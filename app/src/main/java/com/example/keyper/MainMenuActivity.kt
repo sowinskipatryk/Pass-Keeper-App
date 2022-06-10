@@ -18,6 +18,7 @@ class MainMenuActivity : AppCompatActivity() {
         val goToPassCheckScreenButton = findViewById<Button>(R.id.goToPassCheckScreenButton)
         val addServicePasswordButton = findViewById<Button>(R.id.addServicePasswordButton)
         val updateServicePasswordButton = findViewById<Button>(R.id.updateServicePasswordButton)
+        val updateMasterkKeyButton = findViewById<Button>(R.id.updateMasterKeyButton)
 
         goToPassGeneratorScreenButton.setOnClickListener {
             val intent = Intent(this, PassGeneratorActivity::class.java)
@@ -35,6 +36,11 @@ class MainMenuActivity : AppCompatActivity() {
 
         updateServicePasswordButton.setOnClickListener {
             val intent = Intent(this, PassEditorActivity::class.java)
+            startActivity(intent)
+        }
+
+        updateMasterkKeyButton.setOnClickListener {
+            val intent = Intent(this, MasterKeyEditorActivity::class.java)
             startActivity(intent)
         }
     }

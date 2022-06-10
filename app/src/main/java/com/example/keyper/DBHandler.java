@@ -73,7 +73,7 @@ public class DBHandler extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", "Key");
         contentValues.put("password", password);
-        long result = db.update("Services", contentValues, "name=?", new String[] {"Key"});
+        long result = db.update("Master", contentValues, "name=?", new String[] {"Key"});
         return result != -1;
         }
 

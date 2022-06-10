@@ -5,7 +5,6 @@
     android:id="@+id/service_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
     android:longClickable="true"
     android:orientation="vertical">
 
@@ -28,18 +27,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/servicePasswordText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
-            android:padding="5dp"
-            android:text="Password:"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/serviceNameText" />
-
-        <TextView
             android:id="@+id/serviceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,48 +40,73 @@
             app:layout_constraintStart_toEndOf="@+id/serviceNameText"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="0dp"
-            app:boxBackgroundMode="none"
-            app:layout_constraintEnd_toStartOf="@+id/servicePasswordCopyDrawable"
-            app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
-            app:layout_constraintTop_toTopOf="@+id/servicePasswordCopyDrawable"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#555555">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/serviceNameText">
 
-            <EditText
-                android:id="@+id/servicePassword"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/servicePasswordText"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@null"
+                android:layout_weight="0"
                 android:fontFamily="@font/baloo"
                 android:gravity="center_vertical"
-                android:inputType="textPassword"
                 android:padding="5dp"
-                android:text="example"
+                android:text="Password:"
+                android:textColor="@color/ic_launcher_background"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="2.9"
+                android:paddingRight="5dp"
+                app:boxBackgroundMode="none"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toStartOf="@+id/servicePasswordCopyDrawable"
+                app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
+                app:layout_constraintTop_toTopOf="@+id/servicePasswordCopyDrawable"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#555555">
+
+                <EditText
+                    android:id="@+id/servicePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="@font/baloo"
+                    android:gravity="center_vertical"
+                    android:inputType="textPassword"
+                    android:padding="5dp"
+                    android:text="example"
+                    android:textColor="@color/ic_launcher_background"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
+                    app:layout_constraintTop_toBottomOf="@+id/serviceNameText" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/servicePasswordCopyDrawable"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:drawableStart="@drawable/ic_baseline_content_copy_24"
+                android:drawableTint="#555555"
+                android:fontFamily="@font/baloo"
+                android:paddingRight="5dp"
                 android:textColor="@color/ic_launcher_background"
                 android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
-                app:layout_constraintTop_toBottomOf="@+id/serviceNameText" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/serviceName" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/servicePasswordCopyDrawable"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:drawableStart="@drawable/ic_baseline_content_copy_24"
-            android:drawableTint="#555555"
-            android:fontFamily="@font/baloo"
-            android:paddingRight="5dp"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/serviceName" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

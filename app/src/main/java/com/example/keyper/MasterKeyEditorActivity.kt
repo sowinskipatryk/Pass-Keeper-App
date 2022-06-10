@@ -23,7 +23,7 @@ class MasterKeyEditorActivity : AppCompatActivity() {
         updateMasterKeyButton.setOnClickListener {
             val servicePasswordText = updateMasterKeyEditText.text.toString()
             if (servicePasswordText.isEmpty()) {
-                updateMasterKeyErrorTextView.text = " Fill in all input fields!"
+                updateMasterKeyErrorTextView.text = " Fill in the new Master Key!"
                 updateMasterKeyErrorTextView.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.ic_baseline_warning_24, 0, 0, 0
                 )

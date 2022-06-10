@@ -1,17 +1,19 @@
 package com.example.keyper
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import java.security.SecureRandom
 
 
 class PassGeneratorActivity : AppCompatActivity() {
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_generator)
@@ -24,6 +26,10 @@ class PassGeneratorActivity : AppCompatActivity() {
         val generatedPassTextView = findViewById<TextView>(R.id.generatedPassTextView)
         val generatePassInfoTextView = findViewById<TextView>(R.id.generatePassInfoTextView)
         val saveButton = findViewById<Button>(R.id.saveButton)
+        val uppercaseLettersSwitch = findViewById<SwitchCompat>(R.id.uppercaseLettersSwitch)
+        val digitsSwitch = findViewById<SwitchCompat>(R.id.digitsSwitch)
+        val specialCharsSwitch = findViewById<SwitchCompat>(R.id.specialCharsSwitch)
+
 
         generatePassButton.setOnClickListener {
 
@@ -31,9 +37,22 @@ class PassGeneratorActivity : AppCompatActivity() {
             val lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
             val upperCaseLetters = lowerCaseLetters.uppercase()
 
-            val digitsNum = SecureRandom().nextInt(3) + 1
-            val specialCharsNum = SecureRandom().nextInt(3) + 1
-            val upperCaseLettersNum = SecureRandom().nextInt(3) + 1
+            var upperCaseLettersNum = 0
+            var digitsNum = 0
+            var specialCharsNum = 0
+
+            if (uppercaseLettersSwitch.isChecked) {
+                upperCaseLettersNum = SecureRandom().nextInt(3) + 1
+            }
+
+            if (digitsSwitch.isChecked) {
+                digitsNum = SecureRandom().nextInt(3) + 1
+            }
+
+            if (specialCharsSwitch.isChecked) {
+                specialCharsNum = SecureRandom().nextInt(3) + 1
+            }
+
             val lowerCaseLettersNum = 10 - digitsNum - specialCharsNum - upperCaseLettersNum
             val password = StringBuilder(10)
 

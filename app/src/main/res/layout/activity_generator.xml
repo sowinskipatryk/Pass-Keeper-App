@@ -7,6 +7,19 @@
     tools:context=".PassGeneratorActivity">
 
     <TextView
+        android:id="@+id/chooseOptionsInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/baloo"
+        android:text="Choose extra characters:"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
         android:id="@+id/generatePassInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +46,7 @@
         android:id="@+id/generatePassButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/baloo"
         android:text="Generate password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +57,7 @@
         android:id="@+id/generatedPassTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/baloo"
         android:selectAllOnFocus="true"
         android:text="Tap button"
@@ -54,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/saveButton"
@@ -66,4 +79,61 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generatePassButton" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseOptionsInfoTextView">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/uppercaseLettersSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:color="@color/ic_launcher_background"
+            android:fontFamily="@font/baloo"
+            android:text="Uppercase letters"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="18dp"
+            android:trackTint="@color/purple_200"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="230dp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/specialCharsSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/baloo"
+            android:paddingTop="8dp"
+            android:text="Special characters"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="18dp"
+            android:thumbTint="@color/ic_launcher_background"
+            android:trackTint="@color/purple_200"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="201dp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/digitsSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/baloo"
+            android:paddingTop="8dp"
+            android:text="Digits"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="18dp"
+            android:thumbTint="@color/ic_launcher_background"
+            android:trackTint="@color/purple_200"
+            tools:layout_editor_absoluteY="168dp" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

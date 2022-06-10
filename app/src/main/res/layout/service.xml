@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:longClickable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
@@ -31,10 +32,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:paddingStart="15dp"
             android:ems="6"
             android:fontFamily="@font/baloo"
             android:padding="5dp"
+            android:paddingStart="15dp"
             android:text="example"
             android:textColor="@color/ic_launcher_background"
             android:textSize="16sp"
@@ -96,11 +97,13 @@
                 android:id="@+id/servicePasswordCopyDrawable"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
                 android:layout_margin="11dp"
-                android:background="@drawable/ic_baseline_content_copy_24"
-                android:backgroundTint="#555555"
-                android:paddingRight="5dp"
+                android:layout_weight="0.1"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_baseline_content_copy_24"
+                app:tint="#555555"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/serviceName" />
 

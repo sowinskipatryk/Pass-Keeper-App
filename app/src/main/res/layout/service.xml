@@ -30,7 +30,8 @@
             android:id="@+id/serviceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:paddingStart="15dp"
             android:ems="6"
             android:fontFamily="@font/baloo"
             android:padding="5dp"
@@ -91,17 +92,15 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <ImageButton
                 android:id="@+id/servicePasswordCopyDrawable"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"
-                android:drawableStart="@drawable/ic_baseline_content_copy_24"
-                android:drawableTint="#555555"
-                android:fontFamily="@font/baloo"
+                android:layout_margin="11dp"
+                android:background="@drawable/ic_baseline_content_copy_24"
+                android:backgroundTint="#555555"
                 android:paddingRight="5dp"
-                android:textColor="@color/ic_launcher_background"
-                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/serviceName" />
 

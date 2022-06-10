@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.Switch
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
@@ -29,10 +29,28 @@ class PassGeneratorActivity : AppCompatActivity() {
         val uppercaseLettersSwitch = findViewById<SwitchCompat>(R.id.uppercaseLettersSwitch)
         val digitsSwitch = findViewById<SwitchCompat>(R.id.digitsSwitch)
         val specialCharsSwitch = findViewById<SwitchCompat>(R.id.specialCharsSwitch)
+        val charNumSeekBar = findViewById<SeekBar>(R.id.charNumSeekBar)
+        val charsNumTextView = findViewById<TextView>(R.id.charsNumTextView)
 
+        charsNumTextView.text = (6 + charNumSeekBar.progress).toString()
+
+        charNumSeekBar?.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seek: SeekBar,
+                                           progress: Int, fromUser: Boolean) {
+                charsNumTextView.text = (6 + charNumSeekBar.progress).toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            }
+        })
 
         generatePassButton.setOnClickListener {
 
+            val charNum = 6 + charNumSeekBar.progress
             val specialChars = "!@#$%^&*()"
             val lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
             val upperCaseLetters = lowerCaseLetters.uppercase()
@@ -53,8 +71,8 @@ class PassGeneratorActivity : AppCompatActivity() {
                 specialCharsNum = SecureRandom().nextInt(3) + 1
             }
 
-            val lowerCaseLettersNum = 10 - digitsNum - specialCharsNum - upperCaseLettersNum
-            val password = StringBuilder(10)
+            val lowerCaseLettersNum = charNum - digitsNum - specialCharsNum - upperCaseLettersNum
+            val password = StringBuilder(charNum)
 
             for (x in 0 until upperCaseLettersNum) {
                 val pickedLetterIndex = (upperCaseLetters.indices).random()
@@ -67,7 +85,7 @@ class PassGeneratorActivity : AppCompatActivity() {
             }
 
             for (x in 0 until digitsNum) {
-                password.append(SecureRandom().nextInt(10))
+                password.append(SecureRandom().nextInt(charNum))
             }
 
             for (x in 0 until lowerCaseLettersNum) {

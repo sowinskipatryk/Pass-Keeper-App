@@ -7,17 +7,39 @@
     tools:context=".PassGeneratorActivity">
 
     <TextView
+        android:id="@+id/charsNumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/charsNumQuestionTextView"
+        app:layout_constraintTop_toTopOf="@+id/charsNumQuestionTextView" />
+
+    <TextView
+        android:id="@+id/charsNumQuestionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:fontFamily="@font/baloo"
+        android:text="How many characters?"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
         android:id="@+id/chooseOptionsInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/baloo"
         android:text="Choose extra characters:"
         android:textColor="@color/ic_launcher_background"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/charNumSeekBar" />
 
     <TextView
         android:id="@+id/generatePassInfoTextView"
@@ -135,5 +157,20 @@
             tools:layout_editor_absoluteY="168dp" />
 
     </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/charNumSeekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="8"
+        android:progress="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charsNumQuestionTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

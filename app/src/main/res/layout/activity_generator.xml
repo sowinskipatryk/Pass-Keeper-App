@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".PassGeneratorActivity">
 
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="@dimen/logo_width"
+        android:layout_height="@dimen/logo_height"
+        android:layout_marginTop="@dimen/logo_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/keyper" />
+
+    <TextView
+        android:id="@+id/charsNumQuestionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/baloo"
+        android:text="@string/chars_number"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogo" />
+
     <TextView
         android:id="@+id/charsNumTextView"
         android:layout_width="wrap_content"
@@ -13,103 +36,44 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/baloo"
         android:textColor="@color/ic_launcher_background"
-        android:textSize="20dp"
+        android:textSize="@dimen/text_regular"
         app:layout_constraintStart_toEndOf="@+id/charsNumQuestionTextView"
         app:layout_constraintTop_toTopOf="@+id/charsNumQuestionTextView" />
 
-    <TextView
-        android:id="@+id/charsNumQuestionTextView"
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/charNumSeekBar"
+        style="@style/CustomSeekBarStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/baloo"
-        android:text="Characters number:"
-        android:textColor="@color/ic_launcher_background"
-        android:textSize="20dp"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="48dp"
+        android:max="8"
+        android:progress="4"
+        android:theme="@style/CustomSeekBarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/charsNumQuestionTextView" />
 
     <TextView
         android:id="@+id/chooseOptionsInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_regular"
         android:fontFamily="@font/baloo"
-        android:text="Additional options:"
-        android:textColor="@color/ic_launcher_background"
-        android:textSize="20dp"
+        android:text="@string/preferences"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charNumSeekBar" />
-
-    <TextView
-        android:id="@+id/generatePassInfoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:height="@dimen/icon_size"
-        android:fontFamily="@font/baloo"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveButton" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="129dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/keyper" />
-
-    <Button
-        android:id="@+id/generatePassButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/baloo"
-        android:text="Generate password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generatedPassTextView" />
-
-    <TextView
-        android:id="@+id/generatedPassTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/baloo"
-        android:selectAllOnFocus="true"
-        android:text="Tap button"
-        android:textColor="@color/ic_launcher_background"
-        android:textIsSelectable="true"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/baloo"
-        android:text="SAVE PASSWORD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generatePassButton" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,9 +87,9 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:fontFamily="@font/baloo"
-            android:text="Uppercase letters"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="18sp"
+            android:text="@string/uppercase_letters"
+            android:textColor="@color/text"
+            android:textSize="@dimen/text_small"
             android:theme="@style/CustomSwitchStyle"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="230dp" />
@@ -136,10 +100,9 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:fontFamily="@font/baloo"
-            android:paddingTop="8dp"
-            android:text="Special characters"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="18sp"
+            android:text="@string/special_chars"
+            android:textColor="@color/text"
+            android:textSize="@dimen/text_small"
             android:theme="@style/CustomSwitchStyle"
             tools:layout_editor_absoluteX="3dp"
             tools:layout_editor_absoluteY="201dp" />
@@ -150,29 +113,64 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:fontFamily="@font/baloo"
-            android:paddingTop="8dp"
-            android:text="Digits"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="18sp"
+            android:text="@string/digits"
+            android:textColor="@color/text"
+            android:textSize="@dimen/text_small"
             android:theme="@style/CustomSwitchStyle"
             tools:layout_editor_absoluteY="168dp" />
 
     </LinearLayout>
 
-    <SeekBar
-        android:id="@+id/charNumSeekBar"
-        style="@style/CustomSeekBarStyle"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/generatedPassTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:max="8"
-        android:progress="4"
-        android:theme="@style/CustomSeekBarStyle"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:fontFamily="@font/baloo"
+        android:selectAllOnFocus="true"
+        android:text="@string/tap_button"
+        android:textColor="@color/text"
+        android:textIsSelectable="true"
+        android:textSize="@dimen/text_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charsNumQuestionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/generatePassButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/baloo"
+        android:text="@string/generate_password_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generatedPassTextView" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:fontFamily="@font/baloo"
+        android:text="@string/save_password_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generatePassButton" />
+
+    <TextView
+        android:id="@+id/generatePassInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:height="@dimen/icon_size"
+        android:fontFamily="@font/baloo"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

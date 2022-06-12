@@ -7,10 +7,10 @@
     tools:context=".MainMenuActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="129dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/appLogo"
+        android:layout_width="@dimen/logo_width"
+        android:layout_height="@dimen/logo_height"
+        android:layout_marginTop="@dimen/logo_margin_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,25 +18,63 @@
         app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/keyper" />
 
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/baloo"
+        android:text="@string/choose_from_listed"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="@dimen/text_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogo" />
+
+    <Button
+        android:id="@+id/addServicePasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/baloo"
+        android:text="@string/add_password_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView" />
+
     <Button
         android:id="@+id/goToPassGeneratorScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_small"
         android:fontFamily="@font/baloo"
-        android:text="GENERATE NEW PASSWORD"
+        android:text="@string/generate_password_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addServicePasswordButton" />
 
     <Button
+        android:id="@+id/updateServicePasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:fontFamily="@font/baloo"
+        android:text="@string/update_password_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToPassGeneratorScreenButton" />
+
+    <Button
         android:id="@+id/goToPassCheckScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_small"
         android:fontFamily="@font/baloo"
-        android:text="VIEW MY PASSWORDS"
+        android:text="@string/view_passwords_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,51 +84,12 @@
         android:id="@+id/updateMasterKeyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_small"
         android:fontFamily="@font/baloo"
-        android:text="update Master Key"
+        android:text="@string/update_master_key_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goToPassCheckScreenButton" />
 
-    <TextView
-        android:id="@+id/questionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/baloo"
-        android:text="Choose from listed options"
-        android:textColor="@color/ic_launcher_background"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <Button
-        android:id="@+id/addServicePasswordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/baloo"
-        android:text="ADD NEW PASSWORD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionTextView" />
-
-    <Button
-        android:id="@+id/updateServicePasswordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/baloo"
-        android:text="UPDATE EXISTING PASSWORD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToPassGeneratorScreenButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

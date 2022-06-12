@@ -7,10 +7,10 @@
     tools:context=".PassCreatorActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="129dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/appLogo"
+        android:layout_width="@dimen/logo_width"
+        android:layout_height="@dimen/logo_height"
+        android:layout_marginTop="@dimen/logo_margin_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,49 +22,24 @@
         android:id="@+id/updateMasterKeyInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_regular"
         android:fontFamily="@font/baloo"
         android:gravity="center"
-        android:text="Fill in the new Master Key"
+        android:text="@string/fill_new_master_key"
         android:textColor="@color/ic_launcher_background"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_regular"
         app:layout_constraintStart_toStartOf="@+id/updateMasterKeyInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <Button
-        android:id="@+id/updateMasterKeyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/baloo"
-        android:text="UPDATE MASTER KEY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateMasterKeyInputLayout" />
-
-    <TextView
-        android:id="@+id/updateMasterKeyErrorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:height="@dimen/icon_size"
-        android:fontFamily="@font/baloo"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateMasterKeyButton" />
+        app:layout_constraintTop_toBottomOf="@+id/appLogo" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/updateMasterKeyInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="@dimen/window_side_margin"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/window_side_margin"
         android:gravity="center_vertical"
-        android:hint="Master Key"
+        android:hint="@string/master_key_window"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,10 +52,10 @@
         <EditText
             android:id="@+id/updateMasterKeyEditText"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="@dimen/window_height"
             android:background="#606300ee"
             android:drawableStart="@drawable/ic_baseline_vpn_key_24"
-            android:drawableTint="#ffffff"
+            android:drawableTint="@color/drawable_window"
             android:ems="5"
             android:fontFamily="@font/baloo"
             android:gravity="center"
@@ -90,5 +65,30 @@
             android:textColor="@color/purple_500"
             android:textColorHint="#ffffff" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/updateMasterKeyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/baloo"
+        android:text="@string/update_master_key_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateMasterKeyInputLayout" />
+
+    <TextView
+        android:id="@+id/updateMasterKeyErrorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:height="@dimen/icon_size"
+        android:fontFamily="@font/baloo"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateMasterKeyButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

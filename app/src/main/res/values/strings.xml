@@ -1,12 +1,27 @@
 <resources>
     <string name="app_name">Keyper</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="master_key_window">"Master Key"</string>
+    <string name="enter_master_key">"Enter the Master Key"</string>
+    <string name="service_name">"Service name:"</string>
+    <string name="login">"login"</string>
+    <string name="service_name_window">"Service Name"</string>
+    <string name="password">"Password:"</string>
+    <string name="password_window">"Password"</string>
+    <string name="example">"example"</string>
+    <string name="save_password_button">"save password"</string>
+    <string name="chars_number">"Number of characters:"</string>
+    <string name="fill_input_fields">"Fill in the input fields"</string>
+    <string name="tap_button">"Tap button"</string>
+    <string name="add_password_button">"add new password"</string>
+    <string name="generate_password_button">"generate new password"</string>
+    <string name="update_password_button">"update existing password"</string>
+    <string name="update_password">"update password"</string>
+    <string name="view_passwords_button">"view my passwords"</string>
+    <string name="update_master_key_button">"update master key"</string>
+    <string name="preferences">"Preferences:"</string>
+    <string name="choose_from_listed">"Choose from listed options"</string>
+    <string name="fill_new_master_key">"Fill in the new Master Key"</string>
+    <string name="uppercase_letters">"Uppercase letters"</string>
+    <string name="special_chars">"Special characters"</string>
+    <string name="digits">"Digits"</string>
 </resources>

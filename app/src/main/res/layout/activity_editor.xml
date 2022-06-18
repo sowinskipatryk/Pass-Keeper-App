@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".PassCreatorActivity">
 
     <ImageView
@@ -26,7 +27,7 @@
         android:fontFamily="@font/baloo"
         android:gravity="center"
         android:text="@string/fill_input_fields"
-        android:textColor="@color/text"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/text_regular"
         app:layout_constraintStart_toStartOf="@+id/updateTextServiceInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/appLogo" />
@@ -40,8 +41,11 @@
         android:layout_marginEnd="@dimen/window_side_margin"
         android:gravity="center"
         android:hint="@string/service_name_window"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:textColor="@color/window_text_color"
+        app:hintTextColor="@color/hint_text_color"
+        android:textColorHint="@color/hint_text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,10 +56,11 @@
             android:id="@+id/updateServiceNameTextView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/window_height"
-            android:background="#606300ee"
+            android:background="@color/window_background_color"
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="-24sp"
-            android:drawableTint="@color/white"
+            android:drawableTint="@color/window_drawable_color"
+            android:textCursorDrawable="@null"
             android:ems="5"
             android:fontFamily="@font/baloo"
             android:gravity="center"
@@ -63,8 +68,8 @@
             android:maxLines="1"
             android:nestedScrollingEnabled="false"
             android:paddingBottom="24dp"
-            android:textColor="@color/purple_500"
-            android:textColorHint="@color/purple_500" />
+            android:textColor="@color/window_text_color"
+            android:textColorHint="@color/hint_text_color" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,30 +82,34 @@
         android:layout_marginEnd="@dimen/window_side_margin"
         android:gravity="center_vertical"
         android:hint="@string/password_window"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
+        android:textColor="@color/window_text_color"
+        app:hintTextColor="@color/hint_text_color"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:textColorHint="@color/hint_text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateTextServiceInputLayout"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/drawable_window">
+        app:passwordToggleTint="@color/window_drawable_color">
 
         <EditText
             android:id="@+id/updateServicePasswordTextView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/window_height"
-            android:background="#606300ee"
+            android:background="@color/window_background_color"
             android:drawableStart="@drawable/ic_baseline_vpn_key_24"
-            android:drawableTint="@color/drawable_window"
+            android:drawableTint="@color/window_drawable_color"
             android:ems="5"
+            android:textCursorDrawable="@null"
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:inputType="textPassword"
             android:maxLines="1"
             android:paddingBottom="24dp"
-            android:textColor="@color/purple_500"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/window_text_color"
+            android:textColorHint="@color/hint_text_color" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -110,6 +119,8 @@
         android:layout_marginTop="@dimen/spacing_regular"
         android:fontFamily="@font/baloo"
         android:text="@string/update_password"
+        android:textColor="@color/button_text_color"
+        android:backgroundTint="@color/button_background_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

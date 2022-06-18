@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Keyper" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryVariant">@color/primary_variant_color</item>
+        <item name="colorOnPrimary">@color/on_primary_color</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
@@ -20,10 +20,10 @@
 
     <style name="CustomSeekBarStyle">
         <item name="colorControlActivated">@color/ic_launcher_background</item>
-        <item name="android:colorControlNormal">@color/purple_200</item>
+        <item name="android:colorControlNormal">@color/seekbar_color</item>
     </style>
 
     <style name="CustomSwitchStyle">
-        <item name="colorControlActivated">@color/ic_launcher_background</item>
+        <item name="colorControlActivated">@color/switch_activated_color</item>
     </style>
 </resources>

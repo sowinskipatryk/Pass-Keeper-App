@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/white"
+    android:background="@color/background_color"
     tools:context=".SplashScreenActivity">
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_marginTop="@dimen/spacing_regular"
         android:fontFamily="@font/baloo"
         android:text="@string/app_name"
-        android:textColor="@color/text"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/text_very_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -19,11 +19,12 @@
     </style>
 
     <style name="CustomSeekBarStyle">
-        <item name="colorControlActivated">@color/seekbar_color</item>
+        <item name="android:colorControlActivated">@color/seekbar_color</item>
         <item name="android:colorControlNormal">@color/seekbar_color</item>
     </style>
 
     <style name="CustomSwitchStyle">
-        <item name="colorControlActivated">@color/switch_activated_color</item>
+        <item name="colorControlActivated">@color/switch_thumb_checked</item>
+        <item name="colorSwitchThumbNormal">@color/switch_thumb_unchecked</item>
     </style>
 </resources>

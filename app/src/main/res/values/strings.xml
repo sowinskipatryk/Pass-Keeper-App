@@ -24,4 +24,9 @@
     <string name="uppercase_letters">"Uppercase letters"</string>
     <string name="special_chars">"Special characters"</string>
     <string name="digits">"Digits"</string>
+    <string name="save_error">" Save error occurred!"</string>
+    <string name="save_successful">" Password saved!"</string>
+    <string name="update_error">" Update error occurred!"</string>
+    <string name="update_successful">" Password updated!"</string>
+    <string name="missing_fields_error">" Fill in all input fields!"</string>
 </resources>

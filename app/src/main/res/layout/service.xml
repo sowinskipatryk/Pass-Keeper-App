@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:longClickable="true"
+    android:backgroundTint="@color/window_background_color"
     android:orientation="vertical"
     app:cardUseCompatPadding="true">
 
@@ -30,7 +31,7 @@
                 android:fontFamily="@font/baloo"
                 android:padding="5dp"
                 android:text="@string/service_name"
-                android:textColor="@color/ic_launcher_background"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/text_small"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +46,7 @@
                 android:padding="5dp"
                 android:paddingStart="15dp"
                 android:text="@string/example"
-                android:textColor="@color/ic_launcher_background"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/text_small"
                 app:layout_constraintStart_toEndOf="@+id/serviceNameText"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -69,7 +70,7 @@
                 android:gravity="center_vertical"
                 android:padding="5dp"
                 android:text="@string/password"
-                android:textColor="@color/ic_launcher_background"
+                android:textColor="@color/text_color"
                 android:textSize="16sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -86,7 +87,7 @@
                 app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
                 app:layout_constraintTop_toTopOf="@+id/servicePasswordCopyButton"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#555555">
+                app:passwordToggleTint="@color/window_drawable_color">
 
                 <EditText
                     android:id="@+id/servicePassword"
@@ -99,7 +100,7 @@
                     android:inputType="textPassword"
                     android:padding="5dp"
                     android:text="@string/example"
-                    android:textColor="@color/ic_launcher_background"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/text_small"
                     app:layout_constraintStart_toEndOf="@+id/servicePasswordText"
                     app:layout_constraintTop_toBottomOf="@+id/serviceNameText" />
@@ -118,7 +119,7 @@
                 android:src="@drawable/ic_baseline_content_copy_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/serviceName"
-                app:tint="@color/drawable" />
+                app:tint="@color/window_drawable_color" />
 
         </LinearLayout>
 

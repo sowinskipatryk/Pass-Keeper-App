@@ -172,6 +172,7 @@
         android:height="@dimen/icon_size"
         android:fontFamily="@font/baloo"
         android:textColor="@color/text_color"
+        android:drawableTint="@color/window_drawable_color"
         android:textSize="@dimen/text_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

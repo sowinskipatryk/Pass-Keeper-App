@@ -19,7 +19,7 @@
     </style>
 
     <style name="CustomSeekBarStyle">
-        <item name="colorControlActivated">@color/ic_launcher_background</item>
+        <item name="colorControlActivated">@color/seekbar_color</item>
         <item name="android:colorControlNormal">@color/seekbar_color</item>
     </style>
 

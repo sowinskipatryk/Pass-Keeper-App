@@ -14,6 +14,7 @@ class PassViewerActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Viewer"
+        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
 
         val dbHandler = DBHandler(this)
 

@@ -28,46 +28,81 @@
         android:text="@string/enter_master_key"
         android:textColor="@color/text_color"
         android:textSize="@dimen/text_regular"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textLoginInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/appLogo" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textLoginInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/window_side_margin"
-        android:layout_marginTop="@dimen/spacing_small"
-        android:layout_marginEnd="@dimen/window_side_margin"
-        android:gravity="center_vertical"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        android:hint="@string/master_key_window"
-        android:textColor="@color/text_color"
-        app:hintTextColor="@color/hint_text_color"
-        android:textColorHint="@color/hint_text_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterMasterKeyInfoTextView"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#ffffff">
+        app:layout_constraintTop_toBottomOf="@id/enterMasterKeyInfoTextView"
+        android:layout_marginStart="@dimen/window_side_margin"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginEnd="@dimen/window_side_margin"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
-        <EditText
-            android:id="@+id/masterKeyTextView"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/window_height"
-            android:background="@color/window_background_color"
-            android:drawableStart="@drawable/ic_baseline_vpn_key_24"
-            android:drawableTint="@color/window_drawable_color"
-            android:textCursorDrawable="@null"
-            android:ems="5"
-            android:fontFamily="@font/baloo"
-            android:gravity="center"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:paddingBottom="24dp"
-            android:textColor="@color/text_color"
-            android:textColorHint="@color/hint_text_color" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/masterKeyDrawableTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/window_background_color"
+                android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+                android:drawableTint="@color/window_drawable_color"
+                android:fontFamily="@font/baloo"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingStart="16dp"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/hint_text_color" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textMasterKeyInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint="@string/password_window"
+                android:textColor="@color/text_color"
+                app:hintTextColor="@color/hint_text_color"
+                android:textColorHint="@color/hint_text_color"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textServiceInputLayout"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/window_drawable_color">
+
+                <EditText
+                    android:id="@+id/masterKeyTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/window_height"
+                    android:background="@color/window_background_color"
+                    android:ems="5"
+                    android:fontFamily="@font/baloo"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:gravity="center"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingBottom="24dp"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_text_color" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -82,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@id/textLoginInputLayout" />
 
     <TextView
         android:id="@+id/loginInfoTextView"
@@ -92,6 +127,8 @@
         android:height="@dimen/icon_size"
         android:fontFamily="@font/baloo"
         android:textSize="@dimen/text_small"
+        android:textColor="@color/text_color"
+        android:drawableTint="@color/window_drawable_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

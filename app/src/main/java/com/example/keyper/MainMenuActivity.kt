@@ -12,6 +12,7 @@ class MainMenuActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Main Menu"
+        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(false)
 
         val goToPassGeneratorScreenButton = findViewById<Button>(R.id.goToPassGeneratorScreenButton)

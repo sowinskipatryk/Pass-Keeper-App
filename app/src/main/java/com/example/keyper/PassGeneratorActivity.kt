@@ -20,6 +20,7 @@ class PassGeneratorActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Generator"
+        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         val generatePassButton = findViewById<Button>(R.id.generatePassButton)

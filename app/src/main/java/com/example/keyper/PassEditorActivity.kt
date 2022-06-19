@@ -1,9 +1,14 @@
 package com.example.keyper
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class PassEditorActivity : AppCompatActivity() {
@@ -13,6 +18,7 @@ class PassEditorActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Pass Editor"
+        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         val updateServiceNameTextView = findViewById<TextView>(R.id.updateServiceNameTextView)
@@ -20,6 +26,27 @@ class PassEditorActivity : AppCompatActivity() {
         val updatePasswordButton = findViewById<Button>(R.id.updatePasswordButton)
         val updatingInfoTextView = findViewById<TextView>(R.id.updatingInfoTextView)
         val db = DBHandler(this)
+
+        updateServiceNameTextView.setOnKeyListener(View.OnKeyListener{ v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && updateServiceNameTextView.isFocused && event.action == KeyEvent.ACTION_UP) {
+                updateServiceNameTextView.clearFocus()
+                updateServicePasswordTextView.requestFocus()
+                return@OnKeyListener true
+            }
+            false
+        })
+
+        updateServicePasswordTextView.setOnKeyListener(View.OnKeyListener{ v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && updateServicePasswordTextView.isFocused && event.action == KeyEvent.ACTION_UP) {
+                this.currentFocus?.let { view ->
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                    imm?.hideSoftInputFromWindow(view.windowToken, 0)
+                }
+                updateServicePasswordTextView.clearFocus()
+                return@OnKeyListener true
+            }
+            false
+        })
 
         updatePasswordButton.setOnClickListener {
             var serviceNameText = updateServiceNameTextView.text.toString()
@@ -61,6 +88,18 @@ class PassEditorActivity : AppCompatActivity() {
         finish()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         return true;
+    }
+
+    override fun onBackPressed() {
+        val updateServiceNameTextView = findViewById<EditText>(R.id.updateServiceNameTextView)
+        val updateServicePasswordTextView = findViewById<EditText>(R.id.updateServicePasswordTextView)
+        if (updateServiceNameTextView.isFocused) {
+            updateServiceNameTextView.clearFocus()
+        } else if (updateServicePasswordTextView.isFocused) {
+            updateServicePasswordTextView.clearFocus()
+        } else {
+            super.onBackPressed()
+        }
     }
 
 }

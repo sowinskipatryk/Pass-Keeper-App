@@ -1,9 +1,14 @@
 package com.example.keyper
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MasterKeyEditorActivity : AppCompatActivity() {
@@ -12,6 +17,7 @@ class MasterKeyEditorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_masterkey_editor)
 
         val actionBar = supportActionBar
+        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar!!.title = "Master Key Editor"
         actionBar.setDisplayHomeAsUpEnabled(true)
 
@@ -19,6 +25,18 @@ class MasterKeyEditorActivity : AppCompatActivity() {
         val updateMasterKeyButton = findViewById<Button>(R.id.updateMasterKeyButton)
         val updateMasterKeyErrorTextView = findViewById<TextView>(R.id.updateMasterKeyErrorTextView)
         val db = DBHandler(this)
+
+        updateMasterKeyEditText.setOnKeyListener(View.OnKeyListener{ v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && updateMasterKeyEditText.isFocused) {
+                this.currentFocus?.let { view ->
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                    imm?.hideSoftInputFromWindow(view.windowToken, 0)
+                }
+                updateMasterKeyEditText.clearFocus()
+                return@OnKeyListener true
+            }
+            false
+        })
 
         updateMasterKeyButton.setOnClickListener {
             val servicePasswordText = updateMasterKeyEditText.text.toString()
@@ -58,6 +76,15 @@ class MasterKeyEditorActivity : AppCompatActivity() {
         finish()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         return true;
+    }
+
+    override fun onBackPressed() {
+        val updateMasterKeyEditText = findViewById<EditText>(R.id.updateMasterKeyEditText)
+        if (updateMasterKeyEditText.isFocused) {
+            updateMasterKeyEditText.clearFocus()
+        } else {
+            super.onBackPressed()
+        }
     }
 
 }

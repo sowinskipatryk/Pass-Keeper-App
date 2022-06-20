@@ -169,6 +169,7 @@
         android:fontFamily="@font/baloo"
         android:textSize="@dimen/text_small"
         android:textColor="@color/text_color"
+        android:drawablePadding="@dimen/spacing_very_small"
         android:drawableTint="@color/window_drawable_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

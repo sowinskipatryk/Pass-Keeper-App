@@ -3,6 +3,7 @@ package com.example.keyper
 import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
+import android.os.Handler
 import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -81,13 +82,17 @@ class PassCreatorActivity : AppCompatActivity() {
                     R.drawable.ic_baseline_warning_24, 0, 0, 0
                 )
             } else {
-                var successfulInsertion =
+                val successfulInsertion =
                     db.insertServicePassword(serviceNameText, servicePasswordText)
                 if (successfulInsertion == true) {
                     savingInfoTextView.text = getString(R.string.save_successful)
                     savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_baseline_bookmark_added_24, 0, 0, 0
                     )
+                    Handler().postDelayed({
+                        serviceNameTextView.text = getString(R.string.empty_string)
+                        servicePasswordTextView.text = getString(R.string.empty_string)
+                    }, 2500)
                 } else {
                     savingInfoTextView.text = getString(R.string.save_error)
                     savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
@@ -95,6 +100,10 @@ class PassCreatorActivity : AppCompatActivity() {
                     )
                 }
             }
+            Handler().postDelayed({
+                savingInfoTextView.text = getString(R.string.empty_string)
+                savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
+            }, 2500)
         }
     }
 

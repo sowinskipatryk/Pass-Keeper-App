@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.view.*
 import android.view.inputmethod.InputMethodManager
@@ -55,11 +56,11 @@ class LoginScreenActivity : AppCompatActivity() {
         db.setMasterKey()
 
         validateButton.setOnClickListener {
-            val passwordText = passwordInput.text.toString()
+            var passwordText = passwordInput.text.toString()
             val successfulLogin = db.equalsMasterKey(passwordText)
 
             if (TextUtils.isEmpty(passwordText)) {
-                validationInfoTextView.text = " Enter password!"
+                validationInfoTextView.text = getString(R.string.no_password)
                 validationInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.ic_baseline_warning_24,
                     0,
@@ -67,7 +68,7 @@ class LoginScreenActivity : AppCompatActivity() {
                     0
                 )
             } else if (successfulLogin) {
-                validationInfoTextView.text = ""
+                validationInfoTextView.text = getString(R.string.empty_string)
                 validationInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                     com.google.android.material.R.drawable.navigation_empty_icon,
                     0,
@@ -77,14 +78,20 @@ class LoginScreenActivity : AppCompatActivity() {
                 val intent = Intent(this, MainMenuActivity::class.java)
                 startActivity(intent)
             } else {
-                validationInfoTextView.text = " Wrong password!"
+                validationInfoTextView.text = getString(R.string.wrong_password)
                 validationInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.ic_baseline_warning_24,
                     0,
                     0,
                     0
                 )
+                passwordInput.text.clear()
             }
+            Handler().postDelayed({
+
+                validationInfoTextView.text = getString(R.string.empty_string)
+                validationInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
+            }, 2500)
         }
 
     }

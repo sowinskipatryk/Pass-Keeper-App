@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -82,6 +83,11 @@ class PassEditorActivity : AppCompatActivity() {
                     updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_baseline_bookmark_added_24, 0, 0, 0
                     )
+                    Handler().postDelayed({
+                        updateServiceNameTextView.text = getString(R.string.empty_string)
+                        updateServicePasswordTextView.text = getString(R.string.empty_string)
+                        updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
+                    }, 2500)
                 } else {
                     updatingInfoTextView.text = getString(R.string.update_error)
                     updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
@@ -89,6 +95,10 @@ class PassEditorActivity : AppCompatActivity() {
                     )
                 }
             }
+            Handler().postDelayed({
+                updatingInfoTextView.text = getString(R.string.empty_string)
+                updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
+            }, 2500)
         }
     }
 

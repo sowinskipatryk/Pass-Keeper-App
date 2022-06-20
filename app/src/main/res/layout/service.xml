@@ -95,6 +95,8 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:focusable="false"
+                    android:enabled="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="@font/baloo"
                     android:gravity="center_vertical"
                     android:inputType="textPassword"

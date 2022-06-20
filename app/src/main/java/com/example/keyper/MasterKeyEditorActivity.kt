@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -68,7 +69,12 @@ class MasterKeyEditorActivity : AppCompatActivity() {
                         R.drawable.ic_baseline_warning_24, 0, 0, 0
                     )
                 }
+                updateMasterKeyEditText.text = getString(R.string.empty_string)
             }
+            Handler().postDelayed({
+                updateMasterKeyErrorTextView.text = getString(R.string.empty_string)
+                updateMasterKeyErrorTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
+            }, 2500)
         }
     }
 

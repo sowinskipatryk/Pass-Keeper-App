@@ -26,7 +26,7 @@ class PassCreatorActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-        val textPassInputLayout = findViewById<TextInputLayout>(R.id.textPassInputLayout)
+        val textPasswordInputLayout = findViewById<TextInputLayout>(R.id.textPasswordInputLayout)
         val serviceNameTextView = findViewById<TextView>(R.id.serviceNameTextView)
         val servicePasswordTextView = findViewById<TextView>(R.id.servicePasswordTextView)
         val savePasswordButton = findViewById<Button>(R.id.savePasswordButton)
@@ -147,22 +147,22 @@ class PassCreatorActivity : AppCompatActivity() {
                 val y = event.rawY.toInt()
                 if (!outRect.contains(x, y)) {
                     v.clearFocus()
-                    val et1: EditText? = findViewById(R.id.serviceNameTextView)
-                    val et2: EditText? = findViewById(R.id.servicePasswordTextView)
+                    val area1: EditText? = findViewById(R.id.serviceNameTextView)
+                    val area2: TextInputLayout? = findViewById(R.id.textPasswordInputLayout)
                     val rect1 = Rect()
                     val rect2 = Rect()
                     val location1 = IntArray(2)
                     val location2 = IntArray(2)
-                    et1!!.getLocationOnScreen(location1)
+                    area1!!.getLocationOnScreen(location1)
                     rect1.left = location1[0]
                     rect1.top = location1[1]
-                    rect1.right = location1[0] + et1.width
-                    rect1.bottom = location1[1] + et1.height
-                    et2!!.getLocationOnScreen(location2)
+                    rect1.right = location1[0] + area1.width
+                    rect1.bottom = location1[1] + area1.height
+                    area2!!.getLocationOnScreen(location2)
                     rect2.left = location2[0]
                     rect2.top = location2[1]
-                    rect2.right = location2[0] + et2.width
-                    rect2.bottom = location2[1] + et2.height
+                    rect2.right = location2[0] + area2.width
+                    rect2.bottom = location2[1] + area2.height
                     if ((!rect1.contains(x, y)) && (!rect2.contains(x, y))) {
                         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.hideSoftInputFromWindow(v.getWindowToken(), 0)

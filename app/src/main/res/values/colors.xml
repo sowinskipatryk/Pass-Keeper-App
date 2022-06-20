@@ -7,19 +7,19 @@
     <color name="cursor_color">#FFFFFFFF</color>
     <color name="button_text_color">#FFFFFFFF</color>
     <color name="window_text_color">#FFFFFFFF</color>
-    <color name="background_color">#3E206B</color>
+    <color name="background_color">#201238</color>
     <color name="button_background_color">#6C38B8</color>
-    <color name="window_background_color">#4D2883</color>
+    <color name="window_background_color">#2C1A4E</color>
     <color name="window_drawable_color">#ffffff</color>
     <color name="logo_color">#6C38B8</color>
-    <color name="seekbar_color">#d789d7</color>
+    <color name="seekbar_color">#6C38B8</color>
     <color name="primary_color">#9d65c9</color>
     <color name="on_primary_color">#FFFFFF</color>
-    <color name="primary_variant_color">#242424</color>
+    <color name="primary_variant_color">#10091C</color>
     <color name="night_primary_color">#9d65c9</color>
     <color name="night_on_primary_color">#FFFFFF</color>
-    <color name="night_primary_variant_color">#242424</color>
-    <color name="actionbar_color">#4D2883</color>
-    <color name="switch_thumb_checked">#d789d7</color>
+    <color name="night_primary_variant_color">#10091C</color>
+    <color name="actionbar_color">#331A57</color>
+    <color name="switch_thumb_checked">#6C38B8</color>
     <color name="switch_thumb_unchecked">#ffffff</color>
 </resources>

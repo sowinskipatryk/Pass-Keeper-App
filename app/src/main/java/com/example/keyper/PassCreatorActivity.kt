@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputLayout
 
 
 class PassCreatorActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class PassCreatorActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
+        val textPassInputLayout = findViewById<TextInputLayout>(R.id.textPassInputLayout)
         val serviceNameTextView = findViewById<TextView>(R.id.serviceNameTextView)
         val servicePasswordTextView = findViewById<TextView>(R.id.servicePasswordTextView)
         val savePasswordButton = findViewById<Button>(R.id.savePasswordButton)

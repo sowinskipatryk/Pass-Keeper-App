@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/enterMasterKeyInfoTextView"
         android:layout_marginStart="@dimen/window_side_margin"
-        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginTop="@dimen/spacing_small"
         android:layout_marginEnd="@dimen/window_side_margin"
         android:focusable="true"
         android:focusableInTouchMode="true">
@@ -92,7 +92,7 @@
                     android:ems="5"
                     android:fontFamily="@font/baloo"
                     android:textCursorDrawable="@drawable/cursor"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:paddingBottom="24dp"
@@ -122,7 +122,7 @@
     <TextView
         android:id="@+id/loginInfoTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/error_text_window_height"
         android:layout_marginTop="@dimen/spacing_small"
         android:height="@dimen/icon_size"
         android:fontFamily="@font/baloo"

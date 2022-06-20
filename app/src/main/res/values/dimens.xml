@@ -16,5 +16,6 @@
     <dimen name="text_regular">20sp</dimen>
     <dimen name="text_small">16sp</dimen>
     <dimen name="logo_margin_top">48dp</dimen>
-    <dimen name="window_side_margin">48dp</dimen>
+    <dimen name="window_side_margin">60dp</dimen>
+    <dimen name="error_text_window_height">24dp</dimen>
 </resources>

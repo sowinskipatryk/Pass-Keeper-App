@@ -33,4 +33,6 @@
     <string name="wrong_password">"Wrong password!"</string>
     <string name="no_password">"Enter password!"</string>
     <string name="biometrics">"use biometrics"</string>
+    <string name="successful_login">"Successful login!"</string>
+    <string name="auth_failed">"Authentication failed!"</string>
 </resources>

@@ -109,31 +109,43 @@
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_regular"
+        android:backgroundTint="@color/button_background_color"
         android:fontFamily="@font/baloo"
         android:text="@string/login"
+        android:layout_marginTop="@dimen/spacing_regular"
         android:textColor="@color/button_text_color"
-        android:backgroundTint="@color/button_background_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textLoginInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textLoginInputLayout" />
+
+    <Button
+        android:id="@+id/biometricButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/button_background_color"
+        android:fontFamily="@font/baloo"
+        android:text="@string/biometrics"
+        android:textColor="@color/button_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <TextView
         android:id="@+id/loginInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/error_text_window_height"
-        android:layout_marginTop="@dimen/spacing_small"
         android:height="@dimen/icon_size"
-        android:fontFamily="@font/baloo"
-        android:textSize="@dimen/text_small"
-        android:textColor="@color/text_color"
         android:drawablePadding="@dimen/spacing_very_small"
+        android:layout_marginTop="@dimen/spacing_small"
         android:drawableTint="@color/window_drawable_color"
+        android:fontFamily="@font/baloo"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/biometricButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

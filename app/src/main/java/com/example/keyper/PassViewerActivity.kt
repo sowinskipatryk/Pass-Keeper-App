@@ -1,10 +1,14 @@
 package com.example.keyper
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 
 class PassViewerActivity : AppCompatActivity() {
 
@@ -18,10 +22,11 @@ class PassViewerActivity : AppCompatActivity() {
 
         val dbHandler = DBHandler(this)
 
-        val passwordsList : ArrayList<Service> = dbHandler.returnPasswords()
-        val rv : RecyclerView = findViewById(R.id.rvPasswords)
+        val passwordsList: ArrayList<Service> = dbHandler.returnPasswords()
+        val rv: RecyclerView = findViewById(R.id.rvPasswords)
+        val emptyPassViewerTextView = findViewById<TextView>(R.id.emptyPassViewerTextView)
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        val pwAdapter = PasswordAdapter(this, passwordsList, rv)
+        val pwAdapter = PasswordAdapter(this, passwordsList, rv, emptyPassViewerTextView)
 
         rv.hasFixedSize()
         rv.layoutManager = layoutManager
@@ -40,10 +45,20 @@ class PassViewerActivity : AppCompatActivity() {
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        finish()
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-        return true;
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.views, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+        if (id == R.id.deleteButton) {
+            Toast.makeText(baseContext, "delete", Toast.LENGTH_SHORT).show()
+        } else {
+            finish()
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+        return true;
+    }
 }

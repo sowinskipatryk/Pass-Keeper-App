@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:longClickable="true"
-    android:backgroundTint="@color/window_background_color"
+    app:cardBackgroundColor="@color/window_background_color"
     android:orientation="vertical"
     app:cardUseCompatPadding="true">
 

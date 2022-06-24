@@ -21,7 +21,9 @@
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/cursor.xml" value="0.1" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/empty.xml" value="0.178" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_bookmark_added_24.xml" value="0.1" />
+        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.155" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_content_copy_24.xml" value="0.1" />
+        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.155" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.114" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.1" />
@@ -47,6 +49,7 @@
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/activity_viewer.xml" value="0.13360507246376813" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/service.xml" value="0.22" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/layout/switch_thumb.xml" value="0.12092391304347826" />
+        <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/menu/views.xml" value="0.1" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/sowinskip/StudioProjects/Pass-Keeper-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

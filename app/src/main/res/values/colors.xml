@@ -10,6 +10,7 @@
     <color name="background_color">#201238</color>
     <color name="button_background_color">#6C38B8</color>
     <color name="window_background_color">#2C1A4E</color>
+    <color name="window_clicked_color">#6C38B8</color>
     <color name="window_drawable_color">#ffffff</color>
     <color name="logo_color">#6C38B8</color>
     <color name="seekbar_color">#6C38B8</color>

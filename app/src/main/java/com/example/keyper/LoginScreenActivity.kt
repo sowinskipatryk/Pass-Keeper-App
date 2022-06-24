@@ -61,27 +61,18 @@ class LoginScreenActivity : AppCompatActivity() {
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                 super.onAuthenticationSucceeded(result)
                 loginInfoTextView.text = getString(R.string.successful_login)
+                loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_check_24, 0, 0, 0)
                 Handler().postDelayed({
                     loginInfoTextView.text = getString(R.string.empty_string)
                     loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
                     val intent = Intent(baseContext, MainMenuActivity::class.java)
                     startActivity(intent)
-                }, 2500)
-            }
-
-            override fun onAuthenticationFailed() {
-                super.onAuthenticationFailed()
-                loginInfoTextView.text = getString(R.string.auth_failed)
-                Handler().postDelayed({
-                    loginInfoTextView.text = getString(R.string.empty_string)
-                    loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-                }, 2500)
+                }, 2000)
             }
     })
 
         promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle("Biometric authentication")
-            .setSubtitle("Place your finger on the scanner")
             .setNegativeButtonText("Cancel")
             .build()
 

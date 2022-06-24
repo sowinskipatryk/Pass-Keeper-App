@@ -16,4 +16,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/emptyPassViewerTextView"
+        android:text="No passwords added"
+        android:textSize="@dimen/text_big"
+        android:textStyle="bold"
+        android:fontFamily="@font/baloo"
+        android:textColor="@color/text_color"
+        android:gravity="center"
+        android:visibility="gone"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

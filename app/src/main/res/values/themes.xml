@@ -8,6 +8,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="actionModeBackground">@color/actionmode_color</item>
         <item name="android:windowAnimationStyle">@style/CustomSlidingActivityAnimation</item>
     </style>
 
@@ -26,6 +27,14 @@
     <style name="CustomSwitchStyle">
         <item name="colorControlActivated">@color/switch_thumb_checked</item>
         <item name="colorSwitchThumbNormal">@color/switch_thumb_unchecked</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/switch_thumb_checked</item>
+    </style>
+
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
 
 </resources>

@@ -53,7 +53,7 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
         holder.serviceName.setText("" + service.getName());
         holder.servicePassword.setText("" + service.getPassword());
         CardView cardView = holder.itemView.findViewById(R.id.service_card);
-        cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.window_background_color));
+        cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.card_item_background_color));
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -64,7 +64,6 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
 
                         @Override
                         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-
                             mode.setTitle("Erase mode");
                             MenuInflater menuInflater = mode.getMenuInflater();
                             menuInflater.inflate(R.menu.selected,menu);
@@ -143,10 +142,10 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.ViewHo
         Service s = passwordList.get(holder.getAdapterPosition());
         CardView cardView = holder.itemView.findViewById(R.id.service_card);
         if (!selectedServicesList.contains(s)) {
-            cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.window_clicked_color));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.card_item_clicked_color));
             selectedServicesList.add(s);
         } else {
-            cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.window_background_color));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.card_item_background_color));
             selectedServicesList.remove(s);
         }
     }

@@ -27,4 +27,5 @@
         <item name="colorControlActivated">@color/switch_thumb_checked</item>
         <item name="colorSwitchThumbNormal">@color/switch_thumb_unchecked</item>
     </style>
+
 </resources>

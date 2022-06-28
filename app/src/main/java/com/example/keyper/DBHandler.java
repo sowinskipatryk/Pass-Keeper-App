@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import com.scottyab.aescrypt.AESCrypt;
-
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
@@ -16,12 +14,12 @@ public class DBHandler extends SQLiteOpenHelper {
         super(context, "servicedata.db", null, 1);
     }
 
-    public String cryptCode = "SuperSecretPassword";
+    public String cryptCode = "SuperSecretCode";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS Master(name TEXT UNIQUE primary key, password TEXT)");
-       db.execSQL("CREATE TABLE IF NOT EXISTS Services(name TEXT UNIQUE primary key, password TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Services(name TEXT UNIQUE primary key, password TEXT)");
 
     }
 

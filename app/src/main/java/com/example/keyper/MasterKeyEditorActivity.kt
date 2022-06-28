@@ -21,7 +21,7 @@ class MasterKeyEditorActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
-        actionBar!!.title = "Master Key Editor"
+        actionBar!!.title = getString(R.string.main_menu)
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         val updateMasterKeyEditText = findViewById<TextView>(R.id.updateMasterKeyEditText)
@@ -52,19 +52,19 @@ class MasterKeyEditorActivity : AppCompatActivity() {
         updateMasterKeyButton.setOnClickListener {
             val servicePasswordText = updateMasterKeyEditText.text.toString()
             if (servicePasswordText.isEmpty()) {
-                updateMasterKeyErrorTextView.text = " Fill in the new Master Key!"
+                updateMasterKeyErrorTextView.text = getString(R.string.fill_new_master_key)
                 updateMasterKeyErrorTextView.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.ic_baseline_warning_24, 0, 0, 0
                 )
             } else {
                 val successfulUpdate = db.updateMasterKey(servicePasswordText)
                 if (successfulUpdate == true) {
-                    updateMasterKeyErrorTextView.text = " Master Key updated!"
+                    updateMasterKeyErrorTextView.text = getString(R.string.masterkey_update_successful)
                     updateMasterKeyErrorTextView.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_baseline_bookmark_added_24, 0, 0, 0
                     )
                 } else {
-                    updateMasterKeyErrorTextView.text = " Error occurred!"
+                    updateMasterKeyErrorTextView.text = getString(R.string.update_error)
                     updateMasterKeyErrorTextView.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_baseline_warning_24, 0, 0, 0
                     )
@@ -74,7 +74,7 @@ class MasterKeyEditorActivity : AppCompatActivity() {
             Handler().postDelayed({
                 updateMasterKeyErrorTextView.text = getString(R.string.empty_string)
                 updateMasterKeyErrorTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-            }, 2500)
+            }, 2000)
         }
     }
 

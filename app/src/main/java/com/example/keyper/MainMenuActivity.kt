@@ -10,10 +10,7 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        val actionBar = supportActionBar
-        actionBar!!.title = "Main Menu"
-        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
-        actionBar.setDisplayHomeAsUpEnabled(false)
+        supportActionBar?.hide()
 
         val goToPassGeneratorScreenButton = findViewById<Button>(R.id.goToPassGeneratorScreenButton)
         val goToPassCheckScreenButton = findViewById<Button>(R.id.goToPassCheckScreenButton)

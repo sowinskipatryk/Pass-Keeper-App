@@ -1,7 +1,6 @@
 package com.example.keyper
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,9 +13,8 @@ class PassViewerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_viewer)
-
         val actionBar = supportActionBar
-        actionBar!!.title = "Pass Viewer"
+        actionBar!!.title = getString(R.string.main_menu)
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
 
         val dbHandler = DBHandler(this)

@@ -19,7 +19,7 @@ class PassGeneratorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_generator)
 
         val actionBar = supportActionBar
-        actionBar!!.title = "Pass Generator"
+        actionBar!!.title = getString(R.string.main_menu)
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
@@ -107,7 +107,7 @@ class PassGeneratorActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener {
             if (generatedPassTextView.text.toString().equals("Tap button")) {
-                generatePassInfoTextView.text = " Generate password first!"
+                generatePassInfoTextView.text = getString(R.string.generate_password_first)
                 generatePassInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.ic_baseline_warning_24,
                     0,

@@ -30,11 +30,7 @@ class LoginScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val actionBar = supportActionBar
-        actionBar!!.title = "Sign in"
-        supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
-        actionBar.setDisplayHomeAsUpEnabled(false)
-
+        supportActionBar?.hide()
         biometricButton = findViewById(R.id.biometricButton)
         val passwordInput = findViewById<EditText>(R.id.masterKeyTextView)
         val loginInfoTextView = findViewById<TextView>(R.id.loginInfoTextView)
@@ -55,7 +51,7 @@ class LoginScreenActivity : AppCompatActivity() {
 
                     loginInfoTextView.text = getString(R.string.empty_string)
                     loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-                }, 2500)
+                }, 2000)
             }
 
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
@@ -67,7 +63,7 @@ class LoginScreenActivity : AppCompatActivity() {
                     loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
                     val intent = Intent(baseContext, MainMenuActivity::class.java)
                     startActivity(intent)
-                }, 2000)
+                }, 1500)
             }
     })
 
@@ -118,15 +114,14 @@ class LoginScreenActivity : AppCompatActivity() {
                     0
                 )
             } else if (successfulLogin) {
-                loginInfoTextView.text = getString(R.string.empty_string)
-                loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
-                    com.google.android.material.R.drawable.navigation_empty_icon,
-                    0,
-                    0,
-                    0
-                )
-                val intent = Intent(this, MainMenuActivity::class.java)
-                startActivity(intent)
+                loginInfoTextView.text = getString(R.string.successful_login)
+                loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_check_24, 0, 0, 0)
+                Handler().postDelayed({
+                    loginInfoTextView.text = getString(R.string.empty_string)
+                    loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
+                    val intent = Intent(baseContext, MainMenuActivity::class.java)
+                    startActivity(intent)
+                }, 1500)
             } else {
                 loginInfoTextView.text = getString(R.string.wrong_password)
                 loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
@@ -141,7 +136,7 @@ class LoginScreenActivity : AppCompatActivity() {
 
                 loginInfoTextView.text = getString(R.string.empty_string)
                 loginInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-            }, 2500)
+            }, 2000)
         }
 
     }

@@ -3,7 +3,7 @@
     <string name="master_key_window">"Master Key"</string>
     <string name="enter_master_key">"Enter the Master Key"</string>
     <string name="service_name">"Service name:"</string>
-    <string name="login">"login"</string>
+    <string name="sign_in">"sign in"</string>
     <string name="service_name_window">"Service Name"</string>
     <string name="password">"Password:"</string>
     <string name="password_window">"Password"</string>
@@ -14,6 +14,7 @@
     <string name="tap_button">"Tap button"</string>
     <string name="add_password_button">"add new password"</string>
     <string name="generate_password_button">"generate new password"</string>
+    <string name="generate_password_first">"Generate password first!"</string>
     <string name="update_password_button">"update existing password"</string>
     <string name="update_password">"update password"</string>
     <string name="view_passwords_button">"view my passwords"</string>
@@ -28,11 +29,13 @@
     <string name="save_successful">"Password saved!"</string>
     <string name="update_error">"Update error occurred!"</string>
     <string name="update_successful">"Password updated!"</string>
+    <string name="masterkey_update_successful">"Master Key updated!"</string>
     <string name="missing_fields_error">"Fill in all input fields!"</string>
     <string name="empty_string">""</string>
     <string name="wrong_password">"Wrong password!"</string>
     <string name="no_password">"Enter password!"</string>
-    <string name="biometrics">"use biometrics"</string>
+    <string name="use_biometrics">"use biometrics"</string>
     <string name="successful_login">"Successful login!"</string>
     <string name="auth_failed">"Authentication failed!"</string>
+    <string name="main_menu">"Main menu"</string>
 </resources>

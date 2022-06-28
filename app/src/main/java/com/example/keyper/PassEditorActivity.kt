@@ -21,7 +21,8 @@ class PassEditorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_editor)
 
         val actionBar = supportActionBar
-        actionBar!!.title = "Pass Editor"
+        actionBar!!.elevation = 0.0F;
+        actionBar.title = getString(R.string.main_menu)
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
@@ -80,15 +81,12 @@ class PassEditorActivity : AppCompatActivity() {
             } else {
                 val successfulUpdate = db.updateServicePassword(serviceNameText, servicePasswordText)
                 if (successfulUpdate == true) {
+                    updateServiceNameTextView.text = getString(R.string.empty_string)
+                    updateServicePasswordTextView.text = getString(R.string.empty_string)
                     updatingInfoTextView.text = getString(R.string.update_successful)
                     updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_baseline_bookmark_added_24, 0, 0, 0
                     )
-                    Handler().postDelayed({
-                        updateServiceNameTextView.text = getString(R.string.empty_string)
-                        updateServicePasswordTextView.text = getString(R.string.empty_string)
-                        updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-                    }, 2500)
                 } else {
                     updatingInfoTextView.text = getString(R.string.update_error)
                     updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
@@ -99,7 +97,7 @@ class PassEditorActivity : AppCompatActivity() {
             Handler().postDelayed({
                 updatingInfoTextView.text = getString(R.string.empty_string)
                 updatingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-            }, 2500)
+            }, 2000)
         }
     }
 

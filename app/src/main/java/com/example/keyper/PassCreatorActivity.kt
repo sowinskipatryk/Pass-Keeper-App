@@ -1,6 +1,7 @@
 package com.example.keyper
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.os.Handler
@@ -20,7 +21,8 @@ class PassCreatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_creator)
 
         val actionBar = supportActionBar
-        actionBar!!.title = "Pass Creator"
+        actionBar!!.elevation = 0.0F;
+        actionBar.title = getString(R.string.main_menu)
         supportActionBar?.setBackgroundDrawable(getDrawable(R.color.actionbar_color))
         actionBar.setDisplayHomeAsUpEnabled(true)
 
@@ -85,13 +87,11 @@ class PassCreatorActivity : AppCompatActivity() {
                     db.insertServicePassword(serviceNameText, servicePasswordText)
                 if (successfulInsertion == true) {
                     savingInfoTextView.text = getString(R.string.save_successful)
+                    serviceNameTextView.text = getString(R.string.empty_string)
+                    servicePasswordTextView.text = getString(R.string.empty_string)
                     savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_baseline_bookmark_added_24, 0, 0, 0
                     )
-                    Handler().postDelayed({
-                        serviceNameTextView.text = getString(R.string.empty_string)
-                        servicePasswordTextView.text = getString(R.string.empty_string)
-                    }, 2500)
                 } else {
                     savingInfoTextView.text = getString(R.string.save_error)
                     savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(
@@ -102,7 +102,7 @@ class PassCreatorActivity : AppCompatActivity() {
             Handler().postDelayed({
                 savingInfoTextView.text = getString(R.string.empty_string)
                 savingInfoTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.empty, 0, 0, 0)
-            }, 2500)
+            }, 2000)
         }
     }
 
@@ -117,7 +117,8 @@ class PassCreatorActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        finish()
+        val intent = Intent(this, MainMenuActivity::class.java)
+        startActivity(intent)
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         return true;
     }
